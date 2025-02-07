@@ -1,1 +1,98 @@
 git init
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Challenges</title>
+</head>
+<body>
+    <h1>PHP Challenges</h1>
+
+    <!-- Form to Input Values -->
+    <form method="post">
+        <label>Enter First Number:</label>
+        <input type="number" name="num1" required><br><br>
+
+        <label>Enter Second Number:</label>
+        <input type="number" name="num2" required><br><br>
+
+        <label>Enter an Integer (for Even/Odd Check):</label>
+        <input type="number" name="check_num" required><br><br>
+
+        <label>Enter a Number (for Increment/Decrement):</label>
+        <input type="number" name="inc_dec_num" required><br><br>
+
+        <label>Enter Marks (for Grade Assignment):</label>
+        <input type="number" name="marks" required><br><br>
+
+        <label>Enter Year (for Leap Year Check):</label>
+        <input type="number" name="year" required><br><br>
+
+        <button type="submit" name="submit">Calculate</button>
+    </form>
+
+    <hr>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        // Get user input
+        $number1 = $_POST['num1'];
+        $number2 = $_POST['num2'];
+        $checkNumber = $_POST['check_num'];
+        $incDecNumber = $_POST['inc_dec_num'];
+        $marks = $_POST['marks'];
+        $year = $_POST['year'];
+
+        // Challenge 1: Arithmetic Operations
+        echo "<h2>Challenge 1</h2>";
+        $addition = $number1 + $number2;
+        $subtraction = $number1 - $number2;
+        $multiplication = $number1 * $number2;
+        $division = ($number2 != 0) ? $number1 / $number2 : "Cannot divide by zero";
+        $modulus = ($number2 != 0) ? $number1 % $number2 : "Undefined (modulus by zero)";
+        echo "Number 1: $number1<br>";
+        echo "Number 2: $number2<br>";
+        echo "Addition: $addition<br>";
+        echo "Subtraction: $subtraction<br>";
+        echo "Multiplication: $multiplication<br>";
+        echo "Division: $division<br>";
+        echo "Modulus: $modulus<br>";
+
+        // Challenge 2: Even or Odd Check
+        echo "<h2>Challenge 2</h2>";
+        $evenOddResult = ($checkNumber % 2 == 0) ? "$checkNumber is Even." : "$checkNumber is Odd.";
+        echo "Entered Number: $checkNumber<br>";
+        echo $evenOddResult . "<br>";
+
+        // Challenge 3: Increment and Decrement
+        echo "<h2>Challenge 3</h2>";
+        $incremented = $incDecNumber + 1;
+        $decremented = $incDecNumber - 1;
+        echo "Initial Value: $incDecNumber<br>";
+        echo "After Increment: $incremented<br>";
+        echo "After Decrement: $decremented<br>";
+
+        // Challenge 4: Assign Grade
+        echo "<h2>Challenge 4</h2>";
+        function assignGrade($marks) {
+            if ($marks >= 90) return "A";
+            elseif ($marks >= 80) return "B";
+            elseif ($marks >= 70) return "C";
+            elseif ($marks >= 60) return "D";
+            else return "F";
+        }
+        echo "Marks: $marks<br>";
+        echo "You got a " . assignGrade($marks) . "!<br>";
+
+        // Challenge 5: Leap Year Check
+        echo "<h2>Challenge 5</h2>";
+        function isLeapYear($year) {
+            return ($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0);
+        }
+        echo "Year: $year<br>";
+        echo isLeapYear($year) ? "$year is a leap year.<br>" : "$year is not a leap year.<br>";
+    }
+    ?>
+</body>
+</html>
