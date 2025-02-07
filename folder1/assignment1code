@@ -44,7 +44,7 @@ git init
         $marks = $_POST['marks'];
         $year = $_POST['year'];
 
-        // Challenge 1: Arithmetic Operations
+        // Challenge 1: 
         echo "<h2>Challenge 1</h2>";
         $addition = $number1 + $number2;
         $subtraction = $number1 - $number2;
@@ -59,13 +59,13 @@ git init
         echo "Division: $division<br>";
         echo "Modulus: $modulus<br>";
 
-        // Challenge 2: Even or Odd Check
+        // Challenge 2: 
         echo "<h2>Challenge 2</h2>";
         $evenOddResult = ($checkNumber % 2 == 0) ? "$checkNumber is Even." : "$checkNumber is Odd.";
         echo "Entered Number: $checkNumber<br>";
         echo $evenOddResult . "<br>";
 
-        // Challenge 3: Increment and Decrement
+        // Challenge 3: 
         echo "<h2>Challenge 3</h2>";
         $incremented = $incDecNumber + 1;
         $decremented = $incDecNumber - 1;
@@ -73,7 +73,7 @@ git init
         echo "After Increment: $incremented<br>";
         echo "After Decrement: $decremented<br>";
 
-        // Challenge 4: Assign Grade
+        // Challenge 4: 
         echo "<h2>Challenge 4</h2>";
         function assignGrade($marks) {
             if ($marks >= 90) return "A";
@@ -85,7 +85,7 @@ git init
         echo "Marks: $marks<br>";
         echo "You got a " . assignGrade($marks) . "!<br>";
 
-        // Challenge 5: Leap Year Check
+        // Challenge 5: 
         echo "<h2>Challenge 5</h2>";
         function isLeapYear($year) {
             return ($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0);
